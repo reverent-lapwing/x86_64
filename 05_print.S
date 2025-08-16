@@ -52,9 +52,11 @@
  * another function uses that memory, it will have some undefined data that we
  * need to overwrite before using it.
  */
+.rodata
 data:
 	 // write needs an address to a string, so we need to save it to memory
 	.string "\n"
+.text
 .globl print
 print:
 	// store the curent value of the callee-safe register %rbp so we can
